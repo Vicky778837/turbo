@@ -1,0 +1,3 @@
+<%#like_text = like_status? "unlike" : "Like"%>
+<%=link_to like_text,like_tweet_path(id: tweet.id)%>
+<%=render 'likes/like_count',tweet: tweet%>

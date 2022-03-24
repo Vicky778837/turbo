@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<%if current_user%>
+<h1><%=current_user.email%></h1>
+<p><%=@user_gid%><p>
+<%=render 'tweets/form',tweet: Tweet.new%>
+<%else%>
+<h1>please sign in</h1>
+<%=link_to "Login to Tweet",new_user_session_path%>
+
+<%end%>
+
+<div id="tweets">
+  <% @tweets.each do |tweet| %>
+    <%= render "tweets/tweet",tweet: tweet,like_status: current_user.liked?(tweet) %>
+    <p>
+      <%= link_to "Show this tweet", tweet %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New tweet", new_tweet_path %>

@@ -1,0 +1,10 @@
+<div id="<%= dom_id tweet %>">
+  <%=render 'likes/private_button',
+  tweet: tweet,
+  like_status: like_status%>
+  <p>
+    <strong>Body:</strong>
+    <%= tweet.body %>
+  </p>
+
+</div>
