@@ -14,7 +14,7 @@
   <% @tweets.each do |tweet| %>
     <%= render "tweets/tweet",tweet: tweet,like_status: current_user.liked?(tweet) %>
     <p>
-      <%= link_to "Show this tweet", tweet %>
+      <%= link_to "Show this tweets", tweet %>
     </p>
   <% end %>
 </div>
